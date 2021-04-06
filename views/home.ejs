@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YelpCamp</title>
+    <script
+      src="https://kit.fontawesome.com/6ae08cc69b.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+
+  <!-- NAVBAR CONTAINER-->
+  <body class="d-flex bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-5">
+        <div>
+          <h3 class="float-md-left mb-0 text-white">Camp Seek</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-right">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="/campgrounds">Campgrounds</a>
+            <% if(!currentUser) { %>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Register</a>
+            <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+          </nav>
+        </div>
+      </header>
+      <!-- END NAVBAR -->
+
+      <!-- MAIN BODY CONTAINER-->
+      <main class="px-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center text-white">
+                <b>Find yourself outside.</b>
+              </h1>
+              <p class="lead text-center text-white">
+                Discover and book tent camping, Rv <br />
+                parks, cabins, treehouses, and glamping.
+              </p>
+
+              <!-- SEARCH CONTAINER -->
+              <div class="mt-2 px-5" id="homeSearch">
+                <form
+                  class="row g-3 px-5"
+                  action="/campgrounds"
+                  method="GET"
+                  class="validated-form"
+                  novalidate
+                >
+                  <div class="col-md-10">
+                    <label
+                      id="search-label"
+                      for="search"
+                      class="form-label text-white"
+                      >Where to?</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="search"
+                      name="search"
+                      placeholder="Search..."
+                      autofocus
+                      required
+                    />
+                  </div>
+                  <div id="search-button" class="col-md-2">
+                    <label
+                      id="search-button-label"
+                      for="search-button"
+                      class="form-label"
+                      >Where to?</label
+                    >
+                    <button class="btn btn-success btn-block">Search</button>
+                  </div>
+                  <%- include('./partials/flash')%>
+                </form>
+              </div>
+              <!-- END SEARCH CONTAINER-->
+
+              <!-- BODY CARDS -->
+              <!-- ROW 1 -->
+              <div class="row mt-5">
+                <!-- ROW 1 CARD LEFT -->
+                <div class="col-md-6">
+                  <div class="card mb-3" id="r1cl">
+                    <img
+                      class="img-fluid"
+                      src="https://images.unsplash.com/photo-1603103480352-f27fcfe348e2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHdhcm0lMjBmb3Jlc3R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Card image cap"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title text-white">
+                        Experiences are better than things.
+                      </h5>
+                      <p class="card-text text-white">
+                        This year, send the gift of the outdoors to your friends
+                        & family.
+                      </p>
+                      <a href="#" class="btn bg-light rounded-pill" id="r1bl"
+                        >Gift now</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- ROW 1 CARD RIGHT -->
+                <div class="col-md-6">
+                  <div class="card mb-3" id="r1cr">
+                    <img
+                      class="img-fluid"
+                      src="https://images.unsplash.com/photo-1516013894828-b214a58fdba7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FtcHNpdGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Card image cap"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title text-white">
+                        Best camps across the nation.
+                      </h5>
+                      <p class="card-text text-white">
+                        See America's Best Campsites to Visit in 2021
+                      </p>
+                      <a href="#" class="btn bg-light rounded-pill" id="r1br"
+                        >Explore</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END ROW 1 -->
+              <!-- ROW 2 -->
+              <div class="row mt-5">
+                <!-- ROW 2 CARD LEFT -->
+                <div class="col-md-4">
+                  <div class="card mb-3" id="r2cl">
+                    <img
+                      class="img-fluid"
+                      src="https://images.unsplash.com/photo-1526011211067-04947caed386?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aW5zaWRlJTIwdGVudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Card image cap"
+                    />
+                    <div class="card-body text-center">
+                      <h5 class="card-title text-white">Hidden gems</h5>
+                      <p class="card-text text-white">Sites on the rise</p>
+                      <a href="#" class="btn bg-light rounded-pill" id="r2bl"
+                        >Go</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- ROW 2 CARD MIDDLE -->
+                <div class="col-md-4">
+                  <div class="card mb-3" id="r2cm">
+                    <img
+                      class="img-fluid"
+                      src="https://images.unsplash.com/photo-1610604506682-cd4caf9348f8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbiUyMGluJTIwZmllbGR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Card image cap"
+                    />
+                    <div class="card-body text-center">
+                      <h5 class="card-title text-white">Wide open spaces</h5>
+                      <p class="card-text text-white">Privacy and seclusion</p>
+                      <a href="#" class="btn bg-light rounded-pill" id="r2bm"
+                        >Go</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- ROW 2 CARD RIGHT -->
+                <div class="col-md-4">
+                  <div class="card mb-3" id="r2cr">
+                    <img
+                      class="img-fluid"
+                      src="https://images.unsplash.com/photo-1602081850519-24694aee87e1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGElMjBmcmFtZSUyMGNhYmlufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Card image cap"
+                    />
+                    <div class="card-body text-center">
+                      <h5 class="card-title text-white">A-frame cabins</h5>
+                      <p class="card-text text-white">Let's get cozy</p>
+                      <a href="#" class="btn bg-light rounded-pill" id="r2br"
+                        >Go</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END ROW 2 -->
+              <!-- END BODY CARDS -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mt-auto text-white-50">
+        <p>&copy; 2020</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

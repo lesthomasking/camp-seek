@@ -1,0 +1,99 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+.cover-container {
+  max-width: 90vw;
+}
+
+.nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1rem;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.active {
+  color: white;
+  border-bottom-color: white;
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+  color: #333;
+  text-shadow: none;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 500px;
+}
+
+#search-button-label {
+  opacity: 0;
+}
+
+#homeSearch {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  border: none;
+}
+
+#r1cl {
+  background-color: rgb(147, 39, 39);
+  border-radius: 0px 0px 24px 24px;
+}
+
+#r1bl {
+  color: rgb(147, 39, 39);
+}
+
+#r1cr {
+  background-color: rgb(206, 150, 59);
+  border-radius: 0px 0px 24px 24px;
+}
+
+#r1br {
+  color: rgb(206, 150, 59);
+}
+
+#r2cl {
+  background-color: rgb(119, 115, 43);
+  border-radius: 0px 0px 24px 24px;
+}
+
+#r2bl {
+  color: rgb(119, 115, 43);
+}
+
+#r2cm {
+  background-color: rgb(93, 92, 72);
+  border-radius: 0px 0px 24px 24px;
+}
+
+#r2bm {
+  color: rgb(93, 92, 72);
+}
+
+#r2cr {
+  background-color: rgb(228, 189, 158);
+  border-radius: 0px 0px 24px 24px;
+}
+
+#r2br {
+  color: rgb(228, 189, 158);
+}
